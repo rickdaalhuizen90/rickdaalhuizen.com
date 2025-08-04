@@ -1,0 +1,14 @@
+<footer class="container">
+  <p>{{ now.Year }} copyright</p>
+  {{ with .GitInfo }}
+    <p style="font-size: smaller; color: grey;">
+      Last updated on {{ .AuthorDate.Format "Jan 2, 2006" }} | Commit:
+      <a href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}" target="_blank" rel="noopener">
+        {{ .AbbreviatedHash }}
+      </a>
+      <br>
+      Message: {{ .Subject }}
+    </p>
+  {{ end }}
+</footer>
+

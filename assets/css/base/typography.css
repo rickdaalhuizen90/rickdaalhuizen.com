@@ -1,0 +1,34 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--space-base);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  text-transform: none;
+  font-family: var(--font-family-primary);
+}
+
+h1 {
+  font-size: var(--font-size-fluid-h1);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-size-fluid-h2);
+  margin-bottom: var(--space-base);
+}
+
+p, li {
+  color: var(--color-muted);
+  margin-bottom: var(--space-base);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s ease;
+  font-weight: var(--font-weight-medium);
+}
+

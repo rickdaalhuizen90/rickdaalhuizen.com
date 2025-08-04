@@ -1,0 +1,4 @@
+headers:
+- for: /**.html
+  values:
+    Content-Security-Policy: script-src localhost:1313

@@ -1,0 +1,29 @@
+:root {
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-base: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* Layout Constants */
+  --max-container-size: 900px;
+  --navigation-height: auto;
+
+  /* Border Radius and Shadows */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 50%;
+
+  --shadow-none: none;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-base: 0 1px 4px rgba(0,0,0,0.02);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 20px rgba(0,0,0,0.05);
+}
+

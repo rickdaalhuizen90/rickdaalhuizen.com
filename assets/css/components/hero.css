@@ -1,0 +1,39 @@
+.hero {
+  display: grid;
+  align-items: center;
+  padding: var(--space-lg) 0;
+  color: #334155;
+
+  & h1 {
+    text-align: center;
+  }
+
+  & figure {
+    margin: 0;
+
+    & img {
+      width: 100%;
+    }
+
+    mask-image:
+      linear-gradient(to bottom, black 60%, transparent 100%),
+      radial-gradient(circle at left, black 70%, transparent 100%),
+      radial-gradient(circle at right, black 70%, transparent 100%);
+    mask-size: 100% 100%;
+    mask-composite: intersect;
+  }
+
+  & figcaption {
+    font-size: var(--font-size-xs);
+    color: #64748b;
+    margin-top: var(--space-sm);
+    font-weight: var(--font-weight-medium);
+  }
+
+  @media (min-width: 769px) {
+    & figure {
+      margin-bottom: 0;
+    }
+  }
+}
+

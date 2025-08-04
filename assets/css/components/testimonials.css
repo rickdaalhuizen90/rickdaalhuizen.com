@@ -1,0 +1,16 @@
+.testimonials {
+  margin-bottom: var(--space-xl);
+
+  &__card {
+    color: var(--color-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  &__author {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+    margin-top: var(--space-xs);
+    text-align: right;
+  }
+}
+

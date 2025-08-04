@@ -1,0 +1,17 @@
+baseURL: '/'
+enableRobotsTXT: true
+
+caches:
+  assets:
+    dir: :resourceDir/_gen
+    maxAge: -1
+  images:
+    dir: :resourceDir/_gen
+    maxAge: -1
+
+minify:
+  minifyOutput: true
+
+build:
+  useResourceCacheWhen: fallback
+  writeStats: true

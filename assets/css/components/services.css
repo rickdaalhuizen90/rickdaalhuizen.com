@@ -1,0 +1,40 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-xl);
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+}
+
+.services__card {
+  @media (min-width: 48rem) {
+    flex: 1 1 30%;
+    min-width: 280px;
+  }
+}
+
+.services__card-title {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-base);
+  color: var(--color-text-primary);
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background: url('https://www.svgrepo.com/show/438970/abstract-star-2.svg') no-repeat center/contain;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+}
+
+.services__card-description {
+  color: var(--color-muted);
+}
+

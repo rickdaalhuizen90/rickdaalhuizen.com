@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <!-- Page Title -->
+  {{ $title := print .Site.Title " - " .Title }}
+  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  <title>{{ $title }} {{ .Site.Params.subtitle }}</title>
+
+  <!-- Alternative Languages. -->
+  {{ range .Site.Home.AllTranslations }}
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Language }}">
+  {{ end }}
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="{{if .Description}}{{.Description}}{{else}}{{$.Site.Params.description }}{{end}}" />
+
+  <link rel="canonical" href={{ .Site.BaseURL }}>
+
+  {{ if .OutputFormats.Get "RSS" }}
+  {{ with .OutputFormats.Get "RSS" }}
+  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  {{ end }}
+  {{ end }}
+
+  {{/* NOTE: These Hugo Internal Templates can be found starting at
+  https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates */}}
+  {{- template "_internal/schema.html" . -}}
+  {{- template "_internal/twitter_cards.html" . -}}
+
+  {{- partial "og.html" . -}}
+
+  {{ if .Site.Params.favicon }}
+  <link rel="shortcut icon" href="{{ relURL ($.Site.Params.favicon) }}" type="image/x-icon" />
+  {{ end }}
+
+  {{ if eq (getenv "HUGO_ENV") "production" }}
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  {{ else }}
+  <meta name="robots" content="noindex, nofollow">
+  {{ end }}
+
+  <meta name="theme-color" content="#eee">
+
+  <!-- SEO -->
+  <link rel="canonical" href="{{ .Page.RelPermalink }}">
+
+  <!-- Humans -->
+  <link rel="author" href="{{ .Site.BaseURL }}humans.txt">
+  <link rel="copyright" href="{{ .Site.BaseURL }}copyright.txt">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+
+  {{- partial "css.html" . -}}
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  {{- block "header" . }}{{ end -}}
+</head>
+
+<body>
+  {{- partialCached "header.html" . -}}
+
+  {{- block "content" . }}{{ end -}}
+
+  {{- partialCached "footer.html" . -}}
+
+  {{- block "scripts" . }}{{ end -}}
+</body>
+
+</html>

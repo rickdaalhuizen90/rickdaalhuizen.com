@@ -1,0 +1,23 @@
+en:
+  contentDir: content/en
+  languageCode: en
+  params:
+    description: English
+
+nl:
+  contentDir: content/nl
+  languageCode: nl
+  params:
+    description: Dutch
+
+fr:
+  contentDir: content/fr
+  languageCode: fr
+  params:
+    description: French
+
+de:
+  contentDir: content/de
+  languageCode: de
+  params:
+    description: German

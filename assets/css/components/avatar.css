@@ -1,0 +1,11 @@
+.avatar {
+  float: left;
+  margin: 0.75rem 1rem 0 0;
+
+  & figcaption {
+    position: fixed;
+    left: -999px;
+    top: -999px;
+  }
+}
+

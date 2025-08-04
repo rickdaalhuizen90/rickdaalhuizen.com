@@ -1,0 +1,15 @@
+.experience {
+  padding-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  color: var(--color-muted);
+
+  & ul {
+    columns: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .experience ul {
+    columns: 2;
+  }
+}

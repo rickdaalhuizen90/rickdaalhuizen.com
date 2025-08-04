@@ -1,0 +1,7 @@
+main:
+  - name: Foo
+    url: '/'
+    weight: 1
+  - name: Bar
+    url: '/'
+    weight: 2

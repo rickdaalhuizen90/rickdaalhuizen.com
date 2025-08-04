@@ -1,0 +1,17 @@
+{
+  "name": "hugo-starter",
+  "version": "1.0.0",
+  "description": "Hugo starter",
+  "scripts": {
+    "img:webp": "find ./static -type f -name '*.png' | xargs -P 8 -I {} sh -c 'cwebp -q 75 $1 -o \"${1%.png}.webp\"' _ {} \\;"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-custom-properties": "^14.0.6",
+    "postcss-import": "^16.1.1",
+    "postcss-nesting": "^13.0.2"
+  }
+}
